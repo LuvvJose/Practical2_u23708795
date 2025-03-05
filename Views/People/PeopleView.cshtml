@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Practical2_u23708795.Models.People>
+
+@{
+    ViewBag.Title = "PeopleView";
+}
+
+
+<h2>PeopleView</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>  <!-- Display label for StudentNumber -->
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>      <!-- Display label for First Name -->
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>       <!-- Display label for Surname -->
+            <th>@Html.DisplayNameFor(model => model.Email)</th>          <!-- Display label for Email -->
+            <th>Profile Link</th>                                        <!-- New Column for the "LINK" Button -->
+        </tr>
+    </thead>
+
+
+
+
+    @foreach (var item in Model) //For each person
+    {
+        <tr>
+            <td> @("u" + item.StudentNumber.ToString())</td>
+            <td> @Html.DisplayFor(modelItem => item.FirstName) </td>
+            <td> @Html.DisplayFor(modelItem => item.LastName)  </td>
+            <td> @Html.DisplayFor(modelItem => item.Email) </td>
+            <td>
+                <!-- Added <td> here -->
+                <a href="@Url.Content(item.MyLink)" class="btn btn-primary" target="_blank">LINK</a>
+            </td> <!-- Close the <td> here -->
+        </tr>
+    }
+
+
+</table>
+

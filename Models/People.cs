@@ -8,14 +8,19 @@ namespace Practical2_u23708795.Models
 {
 	public class People
 	{
-
+            [Display(Name = "Student Number")]
+            public int StudentNumber { get; set; }
+  
             [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
-            [Display(Name = "Current Age")]
+            [Display(Name = "Email")]
+            public string Email { get; set; }
+
+           [Display(Name = "Current Age")]
             public int Age { get; set; } = 0;
 
             [Display(Name = "Living Status")]
